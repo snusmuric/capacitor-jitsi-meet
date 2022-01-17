@@ -40,6 +40,8 @@ public class Jitsi extends Plugin {
         Boolean chatEnabled = call.getBoolean("chatEnabled");
         Boolean inviteEnabled = call.getBoolean("inviteEnabled");
         Boolean callIntegrationEnabled = call.getBoolean("callIntegrationEnabled");
+        Boolean securityEnabled = call.getBoolean("securityEnabled");
+        Boolean statsEnabled = call.getBoolean("statsEnabled");
 
         receiver = new JitsiBroadcastReceiver();
         receiver.setModule(this);
@@ -72,6 +74,12 @@ public class Jitsi extends Plugin {
         if(callIntegrationEnabled == null) {
             callIntegrationEnabled = true;
         }
+        if(securityEnabled == null) {
+            securityEnabled = true;
+        }
+        if(statsEnabled == null) {
+            statsEnabled = true;
+        }
         Timber.tag(TAG).v("display url: %s", url);
 
         Intent intent = new Intent(getActivity(), JitsiActivity.class);
@@ -86,6 +94,8 @@ public class Jitsi extends Plugin {
         intent.putExtra("chatEnabled", chatEnabled);
         intent.putExtra("inviteEnabled", inviteEnabled);
         intent.putExtra("callIntegrationEnabled", callIntegrationEnabled);
+        intent.putExtra("securityEnabled", securityEnabled);
+        intent.putExtra("statsEnabled", statsEnabled);
 
         getActivity().startActivity(intent);
 

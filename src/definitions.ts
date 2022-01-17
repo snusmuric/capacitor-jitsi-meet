@@ -12,6 +12,8 @@ export interface JitsiPlugin {
         chatEnabled: boolean;
         inviteEnabled: boolean;
         callIntegrationEnabled: boolean;
+        securityEnabled: boolean;
+        statsEnabled: boolean;
     }): Promise<{
         roomName: string;
         url: string;
@@ -25,6 +27,8 @@ export interface JitsiPlugin {
         chatEnabled: boolean;
         inviteEnabled: boolean;
         callIntegrationEnabled: boolean;
+        securityEnabled: boolean;
+        statsEnabled: boolean;
     }>;
     leaveConference(options: {}): Promise<{}>;
 }

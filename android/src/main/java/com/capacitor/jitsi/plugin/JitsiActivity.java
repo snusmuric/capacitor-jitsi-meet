@@ -61,6 +61,8 @@ public class JitsiActivity extends JitsiMeetActivity {
         Boolean chatEnabled = getIntent().getBooleanExtra("chatEnabled", false);
         Boolean inviteEnabled = getIntent().getBooleanExtra("inviteEnabled", false);
         Boolean callIntegrationEnabled = getIntent().getBooleanExtra("callIntegrationEnabled", false);
+        Boolean securityEnabled = getIntent().getBooleanExtra("securityEnabled", false);
+        Boolean statsEnabled = getIntent().getBooleanExtra("statsEnabled", false);
 
         String displayName = getIntent().getStringExtra("displayName");
         String email = getIntent().getStringExtra("email");
@@ -93,6 +95,8 @@ public class JitsiActivity extends JitsiMeetActivity {
                 .setFeatureFlag("chat.enabled", chatEnabled)
                 .setFeatureFlag("invite.enabled", inviteEnabled)
                 .setFeatureFlag("call-integration.enabled", callIntegrationEnabled)
+                .setFeatureFlag("speakerstats.enabled", statsEnabled)
+                .setFeatureFlag("security-options.enabled", securiyEnabled)
                 //.setAudioOnly(false)
                 .setUserInfo(userInfo)
                 .build();

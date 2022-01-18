@@ -41,6 +41,7 @@ public class Jitsi extends Plugin {
         Boolean inviteEnabled = call.getBoolean("inviteEnabled");
         Boolean callIntegrationEnabled = call.getBoolean("callIntegrationEnabled");
         Boolean securityEnabled = call.getBoolean("securityEnabled");
+        Boolean meetingPasswordEnabled = call.getBoolean("meetingPasswordEnabled");
         Boolean statsEnabled = call.getBoolean("statsEnabled");
 
         receiver = new JitsiBroadcastReceiver();
@@ -77,6 +78,9 @@ public class Jitsi extends Plugin {
         if(securityEnabled == null) {
             securityEnabled = true;
         }
+        if(meetingPasswordEnabled == null) {
+            meetingPasswordEnabled = true;
+        }
         if(statsEnabled == null) {
             statsEnabled = true;
         }
@@ -95,6 +99,7 @@ public class Jitsi extends Plugin {
         intent.putExtra("inviteEnabled", inviteEnabled);
         intent.putExtra("callIntegrationEnabled", callIntegrationEnabled);
         intent.putExtra("securityEnabled", securityEnabled);
+        intent.putExtra("meetingPasswordEnabled", meetingPasswordEnabled);
         intent.putExtra("statsEnabled", statsEnabled);
 
         getActivity().startActivity(intent);

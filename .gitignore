@@ -4,5 +4,4 @@ android/.idea
 android/build
 .idea/
 
-/dist/
 /ios/Plugin/Pods/

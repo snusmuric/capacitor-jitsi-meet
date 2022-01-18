@@ -38,6 +38,9 @@ public class Jitsi: CAPPlugin {
         self.jitsiMeetViewController.displayName = call.options["displayName"] as? String ?? nil
         self.jitsiMeetViewController.avatarUrl = call.options["avatarURL"] as? String ?? nil
         self.jitsiMeetViewController.callIntegrationEnabled = call.options["callIntegrationEnabled"] as? Bool ?? true
+        self.jitsiMeetViewController.securityEnabled = call.options["securityEnabled"] as? Bool ?? true
+        self.jitsiMeetViewController.meetingPasswordEnabled = call.options["meetingPasswordEnabled"] as? Bool ?? true
+        self.jitsiMeetViewController.statsEnabled = call.options["statsEnabled"] as? Bool ?? true
         self.jitsiMeetViewController.delegate = self;
 
         DispatchQueue.main.async {

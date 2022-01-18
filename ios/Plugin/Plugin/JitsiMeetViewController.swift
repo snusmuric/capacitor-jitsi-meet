@@ -20,6 +20,9 @@ public class JitsiMeetViewController: UIViewController {
     var chatEnabled: Bool = true
     var inviteEnabled: Bool = true
     var callIntegrationEnabled: Bool = true
+    var securityEnabled: Bool = true
+    var meetingPasswordEnabled: Bool = true
+    var statsEnabled: Bool = true
     var email: String? = nil
     var displayName: String? = nil
     var avatarUrl: String? = nil
@@ -62,6 +65,9 @@ public class JitsiMeetViewController: UIViewController {
             builder.setFeatureFlag("chat.enabled", withBoolean: self.chatEnabled)
             builder.setFeatureFlag("invite.enabled", withBoolean: self.inviteEnabled)
             builder.setFeatureFlag("call-integration.enabled", withBoolean: self.callIntegrationEnabled)
+            builder.setFeatureFlag("speakerstats.enabled", withBoolean: self.statsEnabled)
+            builder.setFeatureFlag("security-options.enabled", withBoolean: self.securityEnabled)
+            builder.setFeatureFlag("meeting-password.enabled", withBoolean: self.meetingPasswordEnabled)
 
             builder.userInfo = userInfo
         })
